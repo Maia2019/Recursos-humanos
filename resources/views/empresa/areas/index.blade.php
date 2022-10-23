@@ -17,7 +17,7 @@
     <script>
         $(document).ready(function() {
 
-            $('#rubros').DataTable({
+            $('#areas').DataTable({
 
                 aaSorting: [], /*para que se muestre en el mismo orden que viene del controlador*/
 
