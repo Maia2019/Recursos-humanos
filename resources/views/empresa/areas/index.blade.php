@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'AReas')
+@section('titulo', 'Areas')
 
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
