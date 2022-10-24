@@ -18,3 +18,4 @@ class AreaSeeder extends Seeder
         ]);
     }
 }
+

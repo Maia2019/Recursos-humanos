@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>Rubros - Tutti</title>
+		<title>Empresa</title>
 
 	  <!-- CSRF Token -->
 	  <meta name="csrf-token" content="UCItt5AsTyYtV6pNyTgzwFxg2nCwuYqCtO4y9xDw">
@@ -76,6 +76,5 @@
                 }, 0)
             });
         </script>
-
 	</body>
 </html>
