@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Empresa;
 
 class EmpresaSeeder extends Seeder
 {
@@ -11,6 +12,10 @@ class EmpresaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Empresa::create([
+            'nombre'  => 'Empresa JOrge',
+            'domicilio' => 'alvear',
+            
+        ]);
     }
 }

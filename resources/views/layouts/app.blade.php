@@ -2,10 +2,10 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>@yield('titulo') - Tutti</title>
+		<title>Rubros - Tutti</title>
 
 	  <!-- CSRF Token -->
-	  <meta name="csrf-token" content="{{ csrf_token() }}">
+	  <meta name="csrf-token" content="UCItt5AsTyYtV6pNyTgzwFxg2nCwuYqCtO4y9xDw">
 
 	  <!-- Bootstrap -->
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -13,7 +13,7 @@
 
 	  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
-	  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
 	  <style>
 	    .select2-selection__rendered {
@@ -39,21 +39,17 @@
 	    	transform: scale(1.5);
 	    }
 	  </style>
-	  @yield('css')
+	      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
 
 	  <!-- Scripts y fontawesome-->
-	  <script src="{{ asset('js/all.js') }}" defer></script>
-	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
-	  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-	  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+	  <script src="http://tutti.test/js/all.js" defer></script>
 	</head>
-
 	<body>
 		<div class="wrapper hover_collapse">
 			@include('layouts.navbar')
 
-		  @include('layouts.sidebar.index')
+			@include('layouts.sidebar.index')
 
 			<div class="main_container">
 				<div class="container">
@@ -63,9 +59,12 @@
 		</div>
 
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="{{ asset('js/jquery.js') }}"></script>
+		<script src="{{ asset('js/popper.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/scripts.js') }}"></script>
+		<script src="{{ asset('js/select2.min.js') }}"></script>
+
 		@yield('js')
 
 		<script type="text/javascript">

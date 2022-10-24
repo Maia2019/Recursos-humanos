@@ -17,18 +17,22 @@ class AreaController extends Controller
 
     public function crear()
     {
-        return view('areas.crear');
+        return view('empresa.areas.crear');
     }
 
     public function almacenar(AreaRequest $request)
     {
-        Area::create($request->all());
+        Area::create([
+            'nombre' =>$request->nombre,
+            'descripcion' =>$request->descripcion,
+            'empresa_id' =>1,
+        ]);
         return redirect()->route('areas')->with('message', 'Registro creado exitosamente.');
     }
 
     public function editar(Area $area)
     {
-        return view('areas.editar', compact('area'));
+        return view('empresa.areas.editar', compact('area'));
     }
 
     public function actualizar(AreaRequest $request, Area $area)

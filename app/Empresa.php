@@ -9,7 +9,7 @@ class Empresa extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nombre',
+        'nombre', 'domicilio',
     ];
 
     public function areas()
