@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -70,10 +71,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Iniciar Sesión</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registro</a>
                         @endif
                     @endauth
                 </div>
@@ -98,3 +99,5 @@
         </div>
     </body>
 </html>
+=======
+>>>>>>> 2fc1cbc832d406cff3df4f7d9d4c0e3ef97fcfdd

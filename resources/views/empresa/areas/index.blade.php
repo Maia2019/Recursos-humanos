@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Rubros')
+@section('titulo', 'AReas')
 
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -8,11 +8,6 @@
 @endsection
 
 @section('js')
-
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js">
-    </script>
 
     <script>
         $(document).ready(function() {
@@ -61,7 +56,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="h2 col">Gestión de rubros</div>
+            <div class="h2 col">Gestión de areas</div>
             <div class="col-auto">
                 <a href="{{route('areas.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
                     <i class="fas fa-plus" style="margin-top: 9px;"></i>
@@ -72,10 +67,11 @@
     <div class="container-fluid">
         @include ('layouts.mensaje')
         <div class="container-fluid mt-3">
-            <table id="rubros" class="display responsive nowrap w-100">
+            <table id="areas" class="display responsive nowrap w-100">
                 <thead>
                     <tr>
-                        <th>Tipo</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -83,12 +79,10 @@
                 <tbody>
                     @foreach($areas as $a)
                     <tr>
-                      <td>{{$a->nombre}}</td>
-                      </td>
-
-
+                        <td>{{$a->nombre}}</td>
+                        <td>{{$a->descripcion}}</td>
                         <td>
-                            <a href="{{route('areas.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar rubro"><i class="fas fa-pencil-alt fa-fw"></i></a>
+                            <a href="{{route('areas.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar area"><i class="fas fa-pencil-alt fa-fw"></i></a>
                             <form class="d-inline" action="{{route('areas.eliminar', $a->id)}}" method="POST">
                                 @csrf
                                 @method ('DELETE')

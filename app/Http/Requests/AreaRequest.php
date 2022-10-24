@@ -13,7 +13,7 @@ class AreaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,7 @@ class AreaRequest extends FormRequest
     {
         return [
             'nombre' => 'required|max:50',
+            'descripcion' => 'required|max:50',
         ];
     }
 }
