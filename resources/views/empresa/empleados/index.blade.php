@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+   
     <div class="container-fluid">
         @include ('layouts.mensaje')
         <div class="container-fluid mt-3">
