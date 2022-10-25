@@ -86,8 +86,11 @@ class EmpleadoController extends Controller
      * @param  \App\Empleado  s
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empleado $empleado)
+    public function eliminar($id)
     {
-        //
+        Empleado::destroy($id);
+        return redirect()->route('empleados')->with('message', 'Registro eliminado');
+
+        //Empleado $empleado Funciona!
     }
 }

@@ -40,6 +40,13 @@ class AreaController extends Controller
         $area->update($request->all());
         return redirect()->route('areas')->with('message', 'Registro modificado exitosamente');
     }
+    public function eliminar($id)
+    {
+        Area::destroy($id);
+        return redirect()->route('areas')->with('message', 'Registro eliminado');
+
+        //Funciona!
+    }
 }
 
 
