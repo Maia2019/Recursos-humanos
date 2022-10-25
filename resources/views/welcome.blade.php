@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>NOMINAS</title>
+        <title>Byte&Asociados</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -82,22 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    NOMINAS
+                Byte&Asociados
                 </div>
-
+                <h2>Nominas</h2>
                 <div class="links">
-                    <a href="/dashboard">Dashbobard</a>
-                    <a href="/areas">Areas</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/dashboard">Página</a>
+                    <a href="/areas">Secciones</a>
+                    <a href="https://docs.google.com/document/d/1kTvZ7Us-I67uPiY6XpYyoH3CdXl_70fYp4JLHNag_8k/edit?usp=sharing">Documentación</a>
+                    <a href="https://github.com/Maia2019/Recursos-humanos">GitHub</a>
                 </div>
             </div>
         </div>
     </body>
 </html>
-=======
->>>>>>> 2fc1cbc832d406cff3df4f7d9d4c0e3ef97fcfdd

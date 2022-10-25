@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>Empresa</title>
+		<title>Byte&Asociados</title>
 
 	  <!-- CSRF Token -->
 	  <meta name="csrf-token" content="UCItt5AsTyYtV6pNyTgzwFxg2nCwuYqCtO4y9xDw">
@@ -14,7 +14,8 @@
 	  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
 	  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-
+		<!-- fontawesome -->
+		<script src="https://kit.fontawesome.com/679dbde7bf.js"></script>
 	  <style>
 	    .select2-selection__rendered {
 	    		line-height: 38px !important;

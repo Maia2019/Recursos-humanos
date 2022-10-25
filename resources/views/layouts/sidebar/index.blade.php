@@ -3,9 +3,13 @@
   <ul>
       @guest
           <li>
-            <a href="">
+            <a href="/areas">
               <span class="icon"><i class="fa-fw far fa-list-alt"></i></span>
-              <span class="text">Ofertas</span>
+              <span class="text" href="/areas">Áreas</span>
+            </a>
+            <a href="/empleados">
+              <span class="icon"><i class="fa-fw far fa-list-alt"></i></span>
+              <span class="text" >Empleados</span>
             </a>
           </li>  
       @endguest

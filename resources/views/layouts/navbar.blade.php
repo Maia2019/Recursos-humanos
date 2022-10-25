@@ -1,6 +1,6 @@
 <div class="top_navbar">
-  <a href=" ">
-    <div class="logo">Tutti</div>
+  <a href="/">
+    <div class="logo">Byte&Asociados</div>
   </a>
   <div class="menu">
         <div class="hamburger">
@@ -27,12 +27,12 @@
                   @csrf
               </form>
           @else
-              <a href="">
+              <!--a href="">
                 <i class="fas fa-sign-in-alt"></i> Iniciar sesión
               </a>
               <a href=" ">
                 <i class="fas fa-user-plus"></i> Registrarse
-              </a>
+              </a-->
           @endauth
       </div>
     </div>

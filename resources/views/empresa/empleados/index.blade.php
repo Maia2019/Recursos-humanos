@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Areas')
+@section('titulo', 'empleados')
 
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -12,7 +12,7 @@
     <script>
         $(document).ready(function() {
 
-            $('#areas').DataTable({
+            $('#empleados').DataTable({
 
                 aaSorting: [], /*para que se muestre en el mismo orden que viene del controlador*/
 
@@ -56,11 +56,12 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="h2 col"><a href="/" class="btn btn-primary mx-2"> 
-                <i class="fas fa-arrow-left"></i> Volver</a>
-                Gestión de areas</div>
+            <div class="h2 col"><a href="/" class="btn btn-primary mx-2">
+                <i class="fas fa-arrow-left"></i> Volver</a>    
+                Gestión de empleados
+            </div>
             <div class="col-auto">
-                <a href="{{route('areas.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
+                <a href="{{route('empleados.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
                     <i class="fas fa-plus" style="margin-top: 9px;"></i>
                 </a>
             </div>
@@ -69,7 +70,7 @@
     <div class="container-fluid">
         @include ('layouts.mensaje')
         <div class="container-fluid mt-3">
-            <table id="areas" class="display responsive nowrap w-100">
+            <table id="empleados" class="display responsive nowrap w-100">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -79,13 +80,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($areas as $a)
+                    @foreach($empleados as $a)
                     <tr>
                         <td>{{$a->nombre}}</td>
                         <td>{{$a->descripcion}}</td>
                         <td>
-                            <a href="{{route('areas.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar area"><i class="fas fa-pencil-alt fa-fw"></i></a>
-                            <form class="d-inline" action="{{route('areas.eliminar', $a->id)}}" method="POST">
+                            <a href="{{route('empleados.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar empleado"><i class="fas fa-pencil-alt fa-fw"></i></a>
+                            <form class="d-inline" action="{{route('empleados.eliminar', $a->id)}}" method="POST">
                                 @csrf
                                 @method ('DELETE')
                                 <button type="submit" class="btn btn-danger m-1" data-toggle="tooltip" data-placement="top" title="Eliminar rubro"
