@@ -12,10 +12,21 @@ class Area extends Model
         'nombre', 'descripcion', 'empresa_id',
     ];
     
-    public function empresa()
+    public function empresas()
     {
         return $this->belongsTo('App\Empresa');
     }
-
+    public function departamentos()
+    {
+        return $this->hasMany('App\Departamento');
+    }
+    public function empleados()
+    {
+        return $this->hasMany('App\Empleado');
+    }
+    public function puestos()
+    {
+        return $this->hasMany('App\Puesto');
+    }
 }
 
