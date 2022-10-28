@@ -75,7 +75,8 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>Apellido</th>
+                        <th>Dni</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -84,7 +85,9 @@
                     @foreach($empleados as $a)
                     <tr>
                         <td>{{$a->nombre}}</td>
-                        <td>{{$a->descripcion}}</td>
+                        <td>{{$a->apellido}}</td>
+                        <td>{{$a->dni}}</td>
+
                         <td>
                             <a href="{{route('empleados.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar empleado"><i class="fas fa-pencil-alt fa-fw"></i></a>
                             <form class="d-inline" action="{{route('empleados.eliminar', $a->id)}}" method="POST">
