@@ -16,8 +16,20 @@ class CreateEmpleadosTable extends Migration
         Schema::create('empleados', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->string('descripcion');
-            $table->timestamps();
+            $table->string('apellido');
+            $table->string('sexo');
+            $table->unsignedBigInteger('dni');
+            $table->date('fecha_nacimiento');
+            $table->string('direccion');
+            $table->string('cuil');
+            $table->date('fecha_ingreso')->nullable();
+            $table->date('fecha_egreso')->nullable();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('puesto');
+            $table->string('cuenta_bancaria');
+            $table->unsignedBigInteger('departamento_id')->nullable();
+            //$table->timestamps();
         });
     }
 

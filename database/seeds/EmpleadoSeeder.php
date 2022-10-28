@@ -12,22 +12,67 @@ class EmpleadoSeeder extends Seeder
     public function run()
     {
         Empleado::create([
-            'nombre'  => 'Roberto Gómez',
-            'descripcion' => 'Programador',
+            'nombre' => 'Roberto',
+            'apellido' => 'Gómez',
+            'sexo' => 'Masculino',
+            'dni' => 22789664,
+            'fecha_nacimiento' => '2019-11-04',
+            'direccion' => 'Felix de Azara 3548', 
+            'cuil' => 20227896644,
+            'fecha_ingreso' => '2019-11-04',
+            'fecha_egreso' => '2019-11-04',
+            'email' => 'robertogomez@hotmail.com', 
+            'puesto' => 'Ingeniero en Sistemas',
+            'cuenta_bancaria' => 'BANCO NACION - BCRA',
+            'departamento_id' => null,
+            
         ]);
         Empleado::create([
-            'nombre'  => 'Tatiana Suarez',
-            'descripcion' => 'Contadora',
+            'nombre'  => 'Tatiana',
+            'apellido' => 'Suarez',
+            'sexo' => 'Femenino',
+            'dni' => 32789664,
+            'fecha_nacimiento' => '2019-11-04',
+            'direccion' => 'Felix de Azara 3548', 
+            'cuil' => 20327896644,
+            'fecha_ingreso' => '2019-11-04',
+            'fecha_egreso' => '2019-11-04',
+            'email' => 'tatisuarez@gmail.com', 
+            'puesto' => 'Jefa de departamento en administración',
+            'cuenta_bancaria' => 'BANCO NACION - BCRA',
+            'departamento_id' => null,
               
         ]);
         Empleado::create([
-            'nombre'  => 'Carlos Pereira',
-            'descripcion' => 'Administrativo',
+            'nombre'  => 'Carlos',
+            'apellido' => 'Pereira',
+            'sexo' => 'Masculino',
+            'dni' => 35789664,
+            'fecha_nacimiento' => '2019-11-04',
+            'direccion' => 'Felix de Azara 3548', 
+            'cuil' => 20357896644,
+            'fecha_ingreso' => '2019-11-04',
+            'fecha_egreso' => '2019-11-04',
+            'email' => 'carlopereyra@hotmail.com', 
+            'puesto' => 'Jefe de división Informática',
+            'cuenta_bancaria' => 'BANCO Brubank',
+            'departamento_id' => null,
               
         ]);
         Empleado::create([
-            'nombre'  => 'Lucia Ríos',
-            'descripcion' => 'Lic.Marketing',
+            'nombre'  => 'Lucia',
+            'apellido' => 'Ríos',
+            'sexo' => 'Femenino',
+            'dni' => 30789664,
+            'fecha_nacimiento' => '2019-11-04',
+            'direccion' => 'Felix de Azara 3548', 
+            'cuil' => 20307896644,
+            'fecha_ingreso' => '2019-11-04',
+            'fecha_egreso' => '2019-11-04',
+            'email' => 'luurios@hotmail.com', 
+            'puesto' => 'Project Leader',
+            'cuenta_bancaria' => 'BANCO Brubank',
+            'departamento_id' => null,
               
         ]);
         
