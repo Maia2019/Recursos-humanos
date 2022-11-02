@@ -20,6 +20,7 @@ class Empleado extends Model
         'fecha_egreso',
         'email', 
         'puesto',
+        'descripcion',
         'cuenta_bancaria',
         'departamento_id',
     ];
