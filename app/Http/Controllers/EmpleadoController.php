@@ -58,15 +58,12 @@ class EmpleadoController extends Controller
         $empleado->nombre=$request->get('nombre');
         $empleado->apellido=$request->get('apellido');
         $empleado->sexo=$request->get('sexo');
-
         $empleado->dni=$request->get('dni');
         $empleado->fecha_nacimiento=$request->get('fecha_nacimiento');
         $empleado->direccion=$request->get('direccion');
-
         $empleado->cuil=$request->get('cuil');
         $empleado->fecha_ingreso=$request->get('fecha_ingreso');
         $empleado->fecha_egreso=$request->get('fecha_egreso');
-
         $empleado->email=$request->get('email');
         $empleado->puesto=$request->get('puesto');
         $empleado->descripcion=$request->get('descripcion');
