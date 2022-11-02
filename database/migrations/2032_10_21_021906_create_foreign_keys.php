@@ -14,10 +14,25 @@ class CreateForeignKeys extends Migration
     public function up()
     {
         Schema::table('areas', function (Blueprint $table) {
+            
             $table->foreign('empresa_id')->references('id')->on('empresas');
+        
         });
-    }
+        Schema::table('empleados', function (Blueprint $table) {
+            
+            $table->foreign('departamento_id')->references('id')->on('departamentos');
+    
+        });
+        Schema::table('puestos', function (Blueprint $table) {
+            
+            $table->foreign('area_id')->references('id')->on('areas');
+    
+        });
 
+       
+    
+    }
+    
     /**
      * Reverse the migrations.
      *
