@@ -27,6 +27,7 @@ class CreateEmpleadosTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('puesto');
+            $table->string('descripcion');
             $table->string('cuenta_bancaria');
             $table->unsignedBigInteger('departamento_id')->nullable();
             //$table->timestamps();

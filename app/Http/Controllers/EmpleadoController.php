@@ -40,10 +40,42 @@ class EmpleadoController extends Controller
      */
     public function almacenar(EmpleadoRequest $request)
     {
-        Empleado::create([
+        /*Empleado::create([
         'nombre' =>$request->nombre,
-        'descripcion' =>$request->descripcion,
-    ]);
+        'apellido'=>$request->apellido,
+        'sexo'=>$request->sexo,
+        'dni'=>$request->dni,
+        'fecha_nacimiento'=>$request->fecha_nacimiento,
+        'direccion'=>$request->direccion, 
+        'cuil'=>$request->cuil,
+        'fecha_ingreso'=>$request->fecha_ingreso,
+        'fecha_egreso'=>$request->fecha_egreso,
+        'email'=>$request->email, 
+        'puesto'=>$request->puesto,
+        'cuenta_bancaria'=>$request->cuenta_bancaria,*/
+        //'departamento_id'=>$request->nombre,
+        $empleado=new Empleado;
+        $empleado->nombre=$request->get('nombre');
+        $empleado->apellido=$request->get('apellido');
+        $empleado->sexo=$request->get('sexo');
+
+        $empleado->dni=$request->get('dni');
+        $empleado->fecha_nacimiento=$request->get('fecha_nacimiento');
+        $empleado->direccion=$request->get('direccion');
+
+        $empleado->cuil=$request->get('cuil');
+        $empleado->fecha_ingreso=$request->get('fecha_ingreso');
+        $empleado->fecha_egreso=$request->get('fecha_egreso');
+
+        $empleado->email=$request->get('email');
+        $empleado->puesto=$request->get('puesto');
+        $empleado->descripcion=$request->get('descripcion');
+        $empleado->cuenta_bancaria=$request->get('cuenta_bancaria');
+
+
+
+        $empleado->save();
+    //]);
     return redirect()->route('empleados')->with('message', 'Registro creado exitosamente.');
     }
 

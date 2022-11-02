@@ -77,6 +77,8 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Dni</th>
+                        <th>Puesto</th>
+                        <th  class="text-left">Descripción</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -87,6 +89,9 @@
                         <td>{{$a->nombre}}</td>
                         <td>{{$a->apellido}}</td>
                         <td>{{$a->dni}}</td>
+                        <td>{{$a->puesto}}</td>
+                        <td class="text-left">{{$a->descripcion}}</td>
+
 
                         <td>
                             <a href="{{route('empleados.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar empleado"><i class="fas fa-pencil-alt fa-fw"></i></a>
