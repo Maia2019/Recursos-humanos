@@ -24,9 +24,6 @@ class Area extends Model
     {
         return $this->hasMany('App\Empleado');
     }
-    public function puestos()
-    {
-        return $this->hasMany('App\Puesto');
-    }
+    
 }
 
