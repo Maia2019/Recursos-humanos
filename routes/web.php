@@ -43,3 +43,20 @@ Route::prefix('empleados')->group(function() {
       Route::delete('eliminar/{empleado}', 'EmpleadoController@eliminar')
             ->where('empleado', '[0-9]+')->name('empleados.eliminar');
   });
+  Route::prefix('departamentos')->group(function() {
+
+      Route::get('/', 'DepartamentoController@index')->name('departamentos');
+  
+      Route::get('crear', 'DepartamentoController@crear')->name('departamentos.crear');
+  
+      Route::post('crear', 'DepartamentoController@almacenar'); /* recicla el nombre de la anterior, se diferencian en el verbo http */
+  
+      Route::get('editar/{departamento}', 'DepartamentoController@editar')
+            ->where('departamento', '[0-9]+')->name('departamentos.editar');
+  
+      Route::put('editar/{departamento}', 'DepartamentoController@actualizar')
+            ->where('departamento', '[0-9]+'); /* el where limita que el parametro sea solo nro */
+  
+      Route::delete('eliminar/{departamento}', 'DepartamentoController@eliminar')
+            ->where('departamento', '[0-9]+')->name('departamentos.eliminar');
+  });

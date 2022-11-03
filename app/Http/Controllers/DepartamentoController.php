@@ -3,83 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Departamento;
+use App\Http\Requests\DepartamentoRequest;
 use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $departamentos = Departamento::all();
+
+        return view('empresa.departamentos.index', compact('departamentos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function crear()
     {
-        //
+        return view('empresa.departamentos.crear');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function almacenar(DepartamentoRequest $request)
     {
-        //
+        Departamento::create([
+            'nombre' =>$request->nombre,
+            'descripcion' =>$request->descripcion,
+            'empresa_id' =>1,
+        ]);
+        return redirect()->route('departamentos')->with('message', 'Registro creado exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Departamento $departamento)
+    public function editar(Departamento $departamento)
     {
-        //
+        return view('empresa.departamentos.editar', compact('departamento'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Departamento $departamento)
+    public function actualizar(DepartamentoRequest $request, Departamento $departamento)
     {
-        //
+        $departamento->update($request->all());
+        return redirect()->route('departamentos')->with('message', 'Registro modificado exitosamente');
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Departamento $departamento)
+    public function eliminar($id)
     {
-        //
-    }
+        Departamento::destroy($id);
+        return redirect()->route('departamentos')->with('message', 'Registro eliminado');
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Departamento  $departamento
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Departamento $departamento)
-    {
-        //
+        //Funciona!
     }
 }

@@ -12,7 +12,7 @@
     <script>
         $(document).ready(function() {
 
-            $('#areas').DataTable({
+            $('#departamentos').DataTable({
 
                 aaSorting: [], /*para que se muestre en el mismo orden que viene del controlador*/
 
@@ -56,9 +56,9 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="h2 col">Gestión de areas</div>
+            <div class="h2 col">Gestión de departamentos</div>
             <div class="col-auto">
-                <a href="{{route('areas.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
+                <a href="{{route('departamentos.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
                     <i class="fas fa-plus" style="margin-top: 9px;"></i>
                 </a>
             </div>
@@ -67,7 +67,7 @@
     <div class="container-fluid">
         @include ('layouts.mensaje')
         <div class="container-fluid mt-3">
-            <table id="areas" class="display responsive nowrap w-100">
+            <table id="departamentos" class="display responsive nowrap w-100">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -77,13 +77,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($areas as $a)
+                    @foreach($departamentos as $d)
                     <tr>
-                        <td>{{$a->nombre}}</td>
-                        <td>{{$a->descripcion}}</td>
+                        <td>{{$d->nombre}}</td>
+                        <td>{{$d->descripcion}}</td>
                         <td>
-                            <a href="{{route('areas.editar', $a->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar area"><i class="fas fa-pencil-alt fa-fw"></i></a>
-                            <form class="d-inline" action="{{route('areas.eliminar', $a->id)}}" method="POST">
+                            <a href="{{route('departamentos.editar', $d->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar area"><i class="fas fa-pencil-alt fa-fw"></i></a>
+                            <form class="d-inline" action="{{route('departamentos.eliminar', $d->id)}}" method="POST">
                                 @csrf
                                 @method ('DELETE')
                                 <button type="submit" class="btn btn-danger m-1" data-toggle="tooltip" data-placement="top" title="Eliminar rubro"
