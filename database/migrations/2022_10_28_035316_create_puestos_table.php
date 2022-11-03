@@ -15,8 +15,9 @@ class CreatePuestosTable extends Migration
     {
         Schema::create('puestos', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->unsignedBigInteger('area_id')->nullable();
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->unsignedBigInteger('departamento_id')->nullable();
             $table->timestamps();
         });
     }

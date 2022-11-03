@@ -9,11 +9,11 @@ class Puesto extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nombre', 'descripcion', 'area_id',
+        'nombre', 'descripcion', 'departamento_id',
     ];
     
-    public function areas()
+    public function departamentos()
     {
-        return $this->belongsTo('App\Area');
+        return $this->belongsTo('App\Departamento');
     }
 }
