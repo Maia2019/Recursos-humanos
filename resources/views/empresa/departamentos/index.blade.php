@@ -56,10 +56,12 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="h2 col">Gestión de departamentos</div>
+            <div class="h2 col"><a href="/" class="btn btn-primary mx-2"> 
+                <i class="fas fa-arrow-left"></i> Volver</a>
+                Gestión de departamentos</div>
             <div class="col-auto">
                 <a href="{{route('departamentos.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
-                    <i class="fas fa-plus" style="margin-top: 9px;"></i>
+                Crear Departamento <i class="fas fa-plus" style="margin-top: 9px;"></i>
                 </a>
             </div>
         </div>
