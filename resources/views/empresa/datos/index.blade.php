@@ -61,7 +61,7 @@
                 Gestión de datos</div>
             <div class="col-auto">
                 <a href="{{route('datos.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
-                Crear área <i class="fas fa-plus" style="margin-top: 9px;"></i>
+                Crear dato <i class="fas fa-plus" style="margin-top: 9px;"></i>
                 </a>
             </div>
         </div>

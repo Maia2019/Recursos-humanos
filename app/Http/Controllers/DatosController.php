@@ -22,16 +22,16 @@ class DatosController extends Controller
 
     public function almacenar(DatoRequest $request)
     {
-        $datos=new Dato;
-        $datos->informacion_general=$request->get('informacion_general');
-        $datos->puesto=$request->get('puesto');
-        $datos->horario_de_trabajo=$request->get('horario_de_trabajo');
-        $datos->salario=$request->get('salario');
-        $datos->compensaciones=$request->get('compensaciones');
-      
+        Dato::create([
+            'informacion_general' =>$request->informacion_general,
+            'puesto' =>$request->puesto,
+            'horario_de_trabajo' =>$request->horario_de_trabajo,
+            'salario' =>$request->salario,
+            'compensaciones' =>$request->compensaciones,
+        ]);
         return redirect()->route('datos')->with('message', 'Registro creado exitosamente.');
     }
-
+    
     public function editar(Dato $dato)
     {
         return view('empresa.datos.editar', compact('dato'));
