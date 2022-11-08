@@ -60,7 +60,7 @@
                 <i class="fas fa-arrow-left"></i> Volver</a>
                 Gestión de datos</div>
             <div class="col-auto">
-                <a href="{{route('datos.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
+                <a href="{{route('datos.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear dato">
                 Crear dato <i class="fas fa-plus" style="margin-top: 9px;"></i>
                 </a>
             </div>

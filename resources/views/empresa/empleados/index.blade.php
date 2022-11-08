@@ -75,7 +75,7 @@
                 Gestión de empleados
             </div>
             <div class="col-auto">
-                <a href="{{route('empleados.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear rubro">
+                <a href="{{route('empleados.crear')}}" class="btn button-login px-3 float-right" data-toggle="tooltip" data-placement="left" title="Crear empleado">
                 Crear empleado <i class="fas fa-plus" style="margin-top: 9px;"></i>
                 </a>
             </div>
