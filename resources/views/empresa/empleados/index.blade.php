@@ -55,6 +55,20 @@
 @section('contenido')
 
     <div class="container-fluid">
+    <!--FILTRO-->
+    <div class="pos-f-t ">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-white p-4">
+            @include ('empresa.empleados.search')
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-primary">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-filter"></i>Filtrar
+            </button>
+        </nav>
+    </div>
+     <!--FIN FILTRO-->
         <div class="row">
             <div class="h2 col"><a href="/" class="btn btn-primary mx-2">
                 <i class="fas fa-arrow-left"></i> Volver</a>    

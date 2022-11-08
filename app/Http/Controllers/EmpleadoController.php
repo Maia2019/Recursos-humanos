@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 
 use App\Empleado;
 use Illuminate\Http\Request;
@@ -14,9 +15,21 @@ class EmpleadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $empleados = Empleado::all();
+        if ($request)
+        {   
+            $query=trim($request->get('searchText'));
+            $empleado= DB::table('empleados')
+            ->where('nombre','LIKE','%'.$query.'%')
+            ->orWhere('apellido','LIKE','%'.$query.'%')
+            ->orWhere('dni','LIKE','%'.$query.'%')
+            ->orderBy('nombre','asc')
+            /* tengo problemas con el orderBy y opte por el sortBy pero no resulta.*/
+            ->paginate(7);
+            return view('empresa.empleados.index',['empleados'=>$empleado,"searchText"=>$query]);
+        }
+        //$empleados = Empleado::all();
 
         return view('empresa.empleados.index', compact('empleados'));
     }

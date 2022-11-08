@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Byte&Asociados</title>
-
+		
 	  <!-- CSRF Token -->
 	  <meta name="csrf-token" content="UCItt5AsTyYtV6pNyTgzwFxg2nCwuYqCtO4y9xDw">
 
