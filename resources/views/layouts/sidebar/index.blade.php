@@ -15,6 +15,10 @@
               <span class="icon"><i class="fa-fw far fa-list-alt"></i></span>
               <span class="text" >Empleados</span>
             </a>
+            <a href="/datos">
+              <span class="icon"><i class="fa-fw far fa-list-alt"></i></span>
+              <span class="text" >Datos</span>
+            </a>
           </li>  
       @endguest
 
