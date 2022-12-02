@@ -14,9 +14,6 @@
             <div class="card-header">
                 Crear dato
             </div>
-            
-        
-        
        
             <div class="card-body">
                 <div class="text-danger mb-3 small">(*) Campo obligatorio</div>
@@ -32,18 +29,20 @@
                       </span>
                     @enderror
                 </div>
+                
+                    <div class="form-group {{ $errors->has('puesto_id') ? 'has-error' : ''}}">
+                        <label for="puesto_id" class="control-label">{{ 'Puesto' }}</label>
+                        <select name="puesto_id" id="puesto_id" class="custom-select">
+                            <option value="">Seleccione un puesto</option><!--como no tiene value me pide un required en el controlador-->
+                            @foreach ($puestos as $p)
+                                <option value="{{$p->id}}"> {{$p->nombre}}</option>
+                            @endforeach
+                        </select>
+                        {!! $errors->first('puesto_id', '<p class="help-block">:message</p>') !!}
+                    </div>
+                
 
-                <div class="form-group">
-                    <label for="puesto">Puesto<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control @error('puesto') is-invalid @enderror"
-                    name="puesto" value="{{old('puesto')}}" maxlength="50">
-
-                    @error('puesto')
-                      <span class="invalid-feedback" role="alert">
-                            <strong>{{$message}}</strong>
-                      </span>
-                    @enderror
-                </div>
+                
                 <div class="form-group">
                     <label for="horario_de_trabajo">Horario de trabajo<span class="text-danger">*</span></label>
                     <input type="date" class="form-control @error('horario_de_trabajo') is-invalid @enderror"

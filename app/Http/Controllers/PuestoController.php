@@ -4,82 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Puesto;
 use Illuminate\Http\Request;
+use App\Http\Requests\PuestoRequest;
+
 
 class PuestoController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+{ public function index()
     {
-        //
+        $puestos = Puesto::all();
+
+        return view('empresa.puestos.index', compact('puestos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function crear()
     {
-        //
+        return view('empresa.puestos.crear');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function almacenar(PuestoRequest $request)
     {
-        //
+        Puesto::create([
+            'nombre'=> $request->nombre,
+            'descripcion'=>$request->descripcion, 
+            'departamento_id'=> $request->departamento_id,
+        ]);
+       
+        return redirect()->route('puestos')->with('message', 'Registro creado exitosamente.');
+    }
+    
+    public function editar(Puesto $puesto)
+    {
+        return view('empresa.puestos.editar', compact('puesto'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Puesto  $puesto
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Puesto $puesto)
+    public function actualizar(PuestoRequest $request, Puesto $puesto)
     {
-        //
+        $puesto->update($request->all());
+        return redirect()->route('puestos')->with('message', 'Registro modificado exitosamente');
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Puesto  $puesto
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Puesto $puesto)
+    public function eliminar($id)
     {
-        //
-    }
+        Puesto::destroy($id);
+        return redirect()->route('puestos')->with('message', 'Registro eliminado');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Puesto  $puesto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Puesto $puesto)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Puesto  $puesto
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Puesto $puesto)
-    {
-        //
+        //Funciona!
     }
 }

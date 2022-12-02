@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Dato;
+use App\Puesto;
+
 use App\Http\Requests\DatoRequest;
 use Illuminate\Http\Request;
 
@@ -17,14 +19,16 @@ class DatosController extends Controller
 
     public function crear()
     {
-        return view('empresa.datos.crear');
+        $puestos=Puesto::all();
+
+        return view('empresa.datos.crear', compact("puestos"));
     }
 
     public function almacenar(DatoRequest $request)
     {
         Dato::create([
             'informacion_general' =>$request->informacion_general,
-            'puesto' =>$request->puesto,
+            'puesto' =>$request->puesto_id->nombre,
             'horario_de_trabajo' =>$request->horario_de_trabajo,
             'salario' =>$request->salario,
             'compensaciones' =>$request->compensaciones,

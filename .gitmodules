@@ -1,0 +1,3 @@
+[submodule "recursos-humanos"]
+	path = recursos-humanos
+	url = https://github.com/CarloEmi/recursos-humanos2

@@ -77,3 +77,20 @@ Route::prefix('empleados')->group(function() {
       Route::delete('eliminar/{dato}', 'DatosController@eliminar')
             ->where('datos', '[0-9]+')->name('datos.eliminar');
   });
+  Route::prefix('puestos')->group(function() {
+
+      Route::get('/', 'PuestosController@index')->name('puestos');
+  
+      Route::get('crear', 'PuestosController@crear')->name('puestos.crear');
+  
+      Route::post('crear', 'PuestosController@almacenar'); /* recicla el nombre de la anterior, se diferencian en el verbo http */
+  
+      Route::get('editar/{puesto}', 'PuestosController@editar')
+            ->where('puestos', '[0-9]+')->name('puestos.editar');
+  
+      Route::put('editar/{puesto}', 'PuestosController@actualizar')
+            ->where('puestos', '[0-9]+'); /* el where limita que el parametro sea solo nro */
+  
+      Route::delete('eliminar/{puesto}', 'PuestosController@eliminar')
+            ->where('puestos', '[0-9]+')->name('puestos.eliminar');
+  });
