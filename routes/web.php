@@ -94,3 +94,6 @@ Route::prefix('empleados')->group(function() {
       Route::delete('eliminar/{puesto}', 'PuestosController@eliminar')
             ->where('puestos', '[0-9]+')->name('puestos.eliminar');
   });
+   /*Para generar el PDF
+   Route::get('asistencias/pdf', 'asistenciasController@pdf')->name('asistencias.pdf');
+    */

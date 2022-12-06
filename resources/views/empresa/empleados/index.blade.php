@@ -120,6 +120,10 @@
                     @endforeach
                 </tbody>
             </table>
+            <!--PARA GENERAR PDF
+                a href="{{ route('asistencias.pdf') }}" target="_blank" class="btn btn-info btn-md pull-right" title="PDF">
+                                <i class="fa fa-file-pdf" aria-hidden="true"></i> Generar PDF
+            </a-->
         </div>
     </div>
 @endsection
