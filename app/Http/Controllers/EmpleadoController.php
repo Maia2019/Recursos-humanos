@@ -6,6 +6,10 @@ use DB;
 use App\Empleado;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpleadoRequest;
+//use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
+//use \PDF;
+//use Barryvdh\DomPDF\Facade\PDF;
 
 
 class EmpleadoController extends Controller
@@ -140,9 +144,14 @@ class EmpleadoController extends Controller
     {    
          $empleados=Empleado::all();
         
-         $pdf=PDF::loadView('empleados.pdf',compact('empleados'));//['empleados'=>$empleados]
+         $pdf=PDF::loadView('empresa.empleados.pdf',compact('empleados'));//['empleados'=>$empleados]
          $pdf->setPaper('a4','letter');
-   
-        return $pdf->stream('empleados/pdf'); //Sirve para previsualizar la descarga
+            /*
+            $pdf = PDF::loadView('pdf.report');
+            return $pdf->stream('report.pdf', array('Attachment' => 0));
+            */
+        return $pdf->download('empleados/pdf'); //Sirve para previsualizar la descarga
+        //return view('empresa.empleados.crear');
+
     }
 }
