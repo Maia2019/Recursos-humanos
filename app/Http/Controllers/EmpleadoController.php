@@ -135,4 +135,14 @@ class EmpleadoController extends Controller
 
         //Empleado $empleado Funciona!
     }
+    // HACER PDF 
+    public function pdf() //pdf
+    {    
+         $empleados=Empleado::all();
+        
+         $pdf=PDF::loadView('empleados.pdf',compact('empleados'));//['empleados'=>$empleados]
+         $pdf->setPaper('a4','letter');
+   
+        return $pdf->stream('empleados/pdf'); //Sirve para previsualizar la descarga
+    }
 }
