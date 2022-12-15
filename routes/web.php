@@ -83,19 +83,19 @@ Route::prefix('empleados')->group(function() {
   });
   Route::prefix('solicitudes')->group(function() {
 
-      Route::get('/', 'solicitudesController@index')->name('solicitudes');
+      Route::get('/', 'SolicitudesController@index')->name('solicitudes');
   
-      Route::get('crear', 'solicitudesController@crear')->name('solicitudes.crear');
+      Route::get('crear', 'SolicitudesController@crear')->name('solicitudes.crear');
   
-      Route::post('crear', 'solicitudesController@almacenar'); /* recicla el nombre de la anterior, se diferencian en el verbo http */
+      Route::post('crear', 'SolicitudesController@almacenar'); /* recicla el nombre de la anterior, se diferencian en el verbo http */
   
-      Route::get('editar/{solicitud}', 'solicitudesController@editar')
+      Route::get('editar/{solicitud}', 'SolicitudesController@editar')
             ->where('solicitudes', '[0-9]+')->name('solicitudes.editar');
   
-      Route::put('editar/{solicitud}', 'solicitudesController@actualizar')
+      Route::put('editar/{solicitud}', 'SolicitudesController@actualizar')
             ->where('solicitudes', '[0-9]+'); /* el where limita que el parametro sea solo nro */
   
-      Route::delete('eliminar/{solicitud}', 'solicitudesController@eliminar')
+      Route::delete('eliminar/{solicitud}', 'SolicitudesController@eliminar')
             ->where('solicitudes', '[0-9]+')->name('solicitudes.eliminar');
   });
    /*Para generar el PDF

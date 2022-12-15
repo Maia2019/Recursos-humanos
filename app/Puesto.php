@@ -16,4 +16,5 @@ class Puesto extends Model
     {
         return $this->belongsTo('App\Departamento');
     }
+    
 }

@@ -14,72 +14,41 @@ class SolucitudController extends Controller
      */
     public function index()
     {
-        //
+        $solicitudes = Solicitud::all();
+
+        return view('empresa.solicitudes.index', compact('solicitudes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function crear()
     {
-        //
+        return view('empresa.solicitudes.crear');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function almacenar(SolicitudRequest $request)
     {
-        //
+        Solicitud::create([
+            'nombre' =>$request->nombre,
+            'descripcion' =>$request->descripcion,
+            'empresa_id' =>1,
+        ]);
+        return redirect()->route('solicitudes')->with('message', 'Registro creado exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Solucitud  $solucitud
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Solucitud $solucitud)
+    public function editar(Solicitud $solicitud)
     {
-        //
+        return view('empresa.solicitudes.editar', compact('solicitud'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Solucitud  $solucitud
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Solucitud $solucitud)
+    public function actualizar(SolicitudRequest $request, Solicitud $solicitud)
     {
-        //
+        $solicitud->update($request->all());
+        return redirect()->route('solicitudes')->with('message', 'Registro modificado exitosamente');
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Solucitud  $solucitud
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Solucitud $solucitud)
+    public function eliminar($id)
     {
-        //
-    }
+        Solicitud::destroy($id);
+        return redirect()->route('solicitudes')->with('message', 'Registro eliminado');
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Solucitud  $solucitud
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Solucitud $solucitud)
-    {
-        //
+        //Funciona!
     }
 }

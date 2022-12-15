@@ -32,6 +32,7 @@ class CreateForeignKeys extends Migration
         });
         Schema::table('empleados', function (Blueprint $table) {
             
+            //$table->foreign('puesto_id')->references('id')->on('puestos');
             $table->foreign('departamento_id')->references('id')->on('departamentos');
     
         });

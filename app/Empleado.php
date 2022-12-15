@@ -37,4 +37,8 @@ class Empleado extends Model
     {
         return $this->belongsTo('App\Puesto');
     }
+    public function empleados_solicitudes()
+    {
+        return $this->hasMany('App\Empleado_solicitud');
+    }
 }
