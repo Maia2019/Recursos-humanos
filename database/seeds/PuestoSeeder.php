@@ -32,6 +32,10 @@ class PuestoSeeder extends Seeder
             'descripcion'=>'Esta a cargo de las ventas',
             'departamento_id'=> 4,
         ]);
-        
+        Puesto::create([
+            'nombre'=> 'Ingeniero en Sistemas',
+            'descripcion'=>'Esta al frente de proyectos informáticos',
+            'departamento_id'=> 1,
+        ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use App\Puesto;
 
 use App\Empleado;
 use Illuminate\Http\Request;
@@ -56,8 +57,8 @@ class EmpleadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function crear()
-    {
-        return view('empresa.empleados.crear');
+    {   $puestos=Puesto::all();
+        return view('empresa.empleados.crear', compact("puestos"));
         
     }
 
@@ -81,10 +82,13 @@ class EmpleadoController extends Controller
         $empleado->fecha_ingreso=$request->get('fecha_ingreso');
         $empleado->fecha_egreso=$request->get('fecha_egreso');
         $empleado->email=$request->get('email');
-        $empleado->puesto=$request->get('puesto');
+        $empleado->puesto_id=$request->get('puesto_id');
         $empleado->descripcion=$request->get('descripcion');
         $empleado->cuenta_bancaria=$request->get('cuenta_bancaria');
-
+        $empleado->informacion_general=$request->get('informacion_general');
+        $empleado->horario_de_trabajo=$request->get('horario_de_trabajo');
+        $empleado->salario=$request->get('salario');
+        $empleado->compensaciones=$request->get('compensaciones');
 
 
         $empleado->save();

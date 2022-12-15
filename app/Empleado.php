@@ -19,14 +19,22 @@ class Empleado extends Model
         'fecha_ingreso',
         'fecha_egreso',
         'email', 
-        'puesto',
+        'puesto_id',
         'descripcion',
         'cuenta_bancaria',
+        'informacion_general',
+        'horario_de_trabajo',
+        'salario',
+        'compensaciones',
         'departamento_id',
     ];
    
     public function departamentos()
     {
         return $this->belongsTo('App\Departamento');
+    }
+    public function puesto()
+    {
+        return $this->belongsTo('App\Puesto');
     }
 }
