@@ -6,11 +6,7 @@ use DB;
 use App\Empleado;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpleadoRequest;
-//use Barryvdh\DomPDF\PDF;
-use Barryvdh\DomPDF\Facade as PDF;
-//use \PDF;
-//use Barryvdh\DomPDF\Facade\PDF;
-
+use \PDF;
 
 class EmpleadoController extends Controller
 {
@@ -21,6 +17,22 @@ class EmpleadoController extends Controller
      */
     public function index(Request $request)
     {
+        /* validaciones
+        $request->validate([
+            'nombre' =>'required|regex:/[a-zA-Z][a-zA-Z ]+/|max:255',
+            'dni' =>'required|numeric|gt:0|unique:alumnos', //UNIQUE. VALIDA QUE NO SE REPITAN CAMPOS
+        ], [
+            'nombre.required' =>'Debes completar el campo nombre',
+            "nombre.regex"=>"el campo nombre debe ser completado sólo con letras",
+            'apellido.required' =>'Debes completar el campo apellido',
+            "apellido.regex"=>"el campo apellido debe ser completado sólo con letras",
+            'Dni.required' =>'Debes completar el campo DNI',
+            'Dni.numeric' =>'El campo DNI debe ser numérico',
+            'Dni.digits_between' => 'El campo DNI no debe exceder los 10 dígitos',
+            'Dni.gt' => 'El DNI debe ser mayor a 0',
+            'Dni.unique' =>'El DNI ingresado ¡ya existe!',
+            
+        ]);*/
         if ($request)
         {   
             $query=trim($request->get('searchText'));
@@ -57,20 +69,7 @@ class EmpleadoController extends Controller
      */
     public function almacenar(EmpleadoRequest $request)
     {
-        /*Empleado::create([
-        'nombre' =>$request->nombre,
-        'apellido'=>$request->apellido,
-        'sexo'=>$request->sexo,
-        'dni'=>$request->dni,
-        'fecha_nacimiento'=>$request->fecha_nacimiento,
-        'direccion'=>$request->direccion, 
-        'cuil'=>$request->cuil,
-        'fecha_ingreso'=>$request->fecha_ingreso,
-        'fecha_egreso'=>$request->fecha_egreso,
-        'email'=>$request->email, 
-        'puesto'=>$request->puesto,
-        'cuenta_bancaria'=>$request->cuenta_bancaria,*/
-        //'departamento_id'=>$request->nombre,
+        
         $empleado=new Empleado;
         $empleado->nombre=$request->get('nombre');
         $empleado->apellido=$request->get('apellido');
@@ -140,18 +139,22 @@ class EmpleadoController extends Controller
         //Empleado $empleado Funciona!
     }
     // HACER PDF 
-    public function pdf() //pdf
-    {    
-         $empleados=Empleado::all();
+    
+    
+    
+    public function pdf()
+    {
+        $empleados=Empleado::all();
+        $pdf = PDF::loadView('empresa.empleados.pdf',compact('empleados'))
         
-         $pdf=PDF::loadView('empresa.empleados.pdf',compact('empleados'));//['empleados'=>$empleados]
-         $pdf->setPaper('a4','letter');
-            /*
-            $pdf = PDF::loadView('pdf.report');
-            return $pdf->stream('report.pdf', array('Attachment' => 0));
-            */
-        return $pdf->download('empleados/pdf'); //Sirve para previsualizar la descarga
-        //return view('empresa.empleados.crear');
+        ->setOptions(['defaultFont' => 'sans-serif']);
+        
+        
 
+        $pdf->setPaper('a4','letter');
+
+        
+        return $pdf->stream('empleados/pdf');
     }
+    
 }

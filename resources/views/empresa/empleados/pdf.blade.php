@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <style>
-        @page { margin: 50px; }
+        @page { margin: 100px; }
             
             #footer 
             { 
@@ -17,7 +17,7 @@
                 bottom: -180px; 
                 right: 0px; 
                 height: 50px; 
-                background-color: #00A65A; 
+                background-color: #329fda; 
                 color: #FFFFFF;
 
             }
@@ -25,7 +25,7 @@
             { 
                 content: counter(page, decimal); 
                 float: right;
-                background-color: #00A65A; 
+                background-color: #329fda; 
                 color: #FFFFFF;
              
             }
@@ -47,18 +47,18 @@
         
         
         <!--Tabla-->
-        <table style="border:3px solid #00A65A width:100%" class="table table-condensed table-hover">
+        <table style="border:3px solid #329fda width:100%" class="table table-condensed table-hover">
             
             <!-- Cabecera del reporte -->
-            <thead style="background-color:#00A65A">
+            <thead style="background-color:#329fda">
                 <tr>
-                    <th class="h2 text-center" colspan="4"style="color:#FFFFFF">Listado de empleados</th>
+                    <th class="h2 text-center" colspan="12"style="color:#FFFFFF">Listado de empleados</th>
                 </tr>
             </thead>
              <!-- Datos del reporte -->
             <thead style="background-color:#FFFFFF; border:0">
                 <tr>
-                    <th colspan="4">
+                    <th colspan="12">
                         <table width="100%">
                             <tr>
                                 <td>
@@ -78,12 +78,12 @@
                     </th>
                 </tr>
             </thead>
-            <thead style="background-color:#00A65A">
+            <thead style="background-color:#329fda">
                     <tr>
-                        <th width="30%" style="color:#FFFFFF" height="25px" ><p class="text-uppercase">Nombre</p></th>
+                        <th width="20%" style="color:#FFFFFF" height="25px" ><p class="text-uppercase">Nombre</p></th>
                         <th width="20%" style="color:#FFFFFF" height="25px" ><p class="text-uppercase">Apellido</p></th>
-                        <th width="20%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Dni</p></th>
-                        <th width="20%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Puesto</p></th>
+                        <th width="30%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Dni</p></th>
+                        <th width="30%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Puesto</p></th>
                         <!--th width="20%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Fecha</p></th-->
                         
                                     

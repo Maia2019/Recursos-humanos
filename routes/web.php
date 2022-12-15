@@ -43,7 +43,7 @@ Route::prefix('empleados')->group(function() {
       Route::delete('eliminar/{empleado}', 'EmpleadoController@eliminar')
             ->where('empleado', '[0-9]+')->name('empleados.eliminar');
 
-      Route::get('empleados/pdf', 'EmpleadoController@pdf')->name('empleados.pdf');//pdf
+      Route::get('pdf', 'EmpleadoController@pdf')->name('empleados.pdf');//pdf
 
   });
   Route::prefix('departamentos')->group(function() {
