@@ -63,23 +63,7 @@ Route::prefix('empleados')->group(function() {
       Route::delete('eliminar/{departamento}', 'DepartamentoController@eliminar')
             ->where('departamento', '[0-9]+')->name('departamentos.eliminar');
   });
-  Route::prefix('datos')->group(function() {
-
-      Route::get('/', 'DatosController@index')->name('datos');
-  
-      Route::get('crear', 'DatosController@crear')->name('datos.crear');
-  
-      Route::post('crear', 'DatosController@almacenar'); /* recicla el nombre de la anterior, se diferencian en el verbo http */
-  
-      Route::get('editar/{dato}', 'DatosController@editar')
-            ->where('datos', '[0-9]+')->name('datos.editar');
-  
-      Route::put('editar/{dato}', 'DatosController@actualizar')
-            ->where('datos', '[0-9]+'); /* el where limita que el parametro sea solo nro */
-  
-      Route::delete('eliminar/{dato}', 'DatosController@eliminar')
-            ->where('datos', '[0-9]+')->name('datos.eliminar');
-  });
+ 
   Route::prefix('puestos')->group(function() {
 
       Route::get('/', 'PuestosController@index')->name('puestos');
@@ -96,6 +80,23 @@ Route::prefix('empleados')->group(function() {
   
       Route::delete('eliminar/{puesto}', 'PuestosController@eliminar')
             ->where('puestos', '[0-9]+')->name('puestos.eliminar');
+  });
+  Route::prefix('solicitudes')->group(function() {
+
+      Route::get('/', 'solicitudesController@index')->name('solicitudes');
+  
+      Route::get('crear', 'solicitudesController@crear')->name('solicitudes.crear');
+  
+      Route::post('crear', 'solicitudesController@almacenar'); /* recicla el nombre de la anterior, se diferencian en el verbo http */
+  
+      Route::get('editar/{solicitud}', 'solicitudesController@editar')
+            ->where('solicitudes', '[0-9]+')->name('solicitudes.editar');
+  
+      Route::put('editar/{solicitud}', 'solicitudesController@actualizar')
+            ->where('solicitudes', '[0-9]+'); /* el where limita que el parametro sea solo nro */
+  
+      Route::delete('eliminar/{solicitud}', 'solicitudesController@eliminar')
+            ->where('solicitudes', '[0-9]+')->name('solicitudes.eliminar');
   });
    /*Para generar el PDF
    Route::get('asistencias/pdf', 'asistenciasController@pdf')->name('asistencias.pdf');
