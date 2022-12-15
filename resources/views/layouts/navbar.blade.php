@@ -29,7 +29,6 @@
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="/empleados">Listado</a>
               <a class="dropdown-item" href="/empleados/crear">Crear</a>
-              <a class="dropdown-item" href="/datos">Ver datos</a>
             </div>
           </li>
         </ul>

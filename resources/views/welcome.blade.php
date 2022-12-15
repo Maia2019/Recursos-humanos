@@ -85,7 +85,7 @@
                 </div>
                 <h2>Nominas</h2>
                 <div class="links">
-                    <a href="/dashboard">Página</a>
+                    <!--a href="/dashboard">Página</a-->
                     <a href="/areas">Secciones</a>
                     <a href="https://docs.google.com/document/d/1kTvZ7Us-I67uPiY6XpYyoH3CdXl_70fYp4JLHNag_8k/edit?usp=sharing">Documentación</a>
                     <a href="https://github.com/Maia2019/Recursos-humanos">GitHub</a>

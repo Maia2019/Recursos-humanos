@@ -72,9 +72,6 @@
                                 </td>
                             </tr>
                         </table>
-
-                            
-                        
                     </th>
                 </tr>
             </thead>
@@ -82,8 +79,8 @@
                     <tr>
                         <th width="20%" style="color:#FFFFFF" height="25px" ><p class="text-uppercase">Nombre</p></th>
                         <th width="20%" style="color:#FFFFFF" height="25px" ><p class="text-uppercase">Apellido</p></th>
-                        <th width="30%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Dni</p></th>
-                        <th width="30%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Puesto</p></th>
+                        <th width="20%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Dni</p></th>
+                        <th width="40%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Puesto</p></th>
                         <!--th width="20%" style="color:#FFFFFF" height="25px"><p class="text-uppercase">Fecha</p></th-->
                         
                                     
