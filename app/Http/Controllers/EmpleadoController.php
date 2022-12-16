@@ -51,32 +51,7 @@ class EmpleadoController extends Controller
             */
             return view('empresa.empleados.index',['empleados'=>$empleado,"searchText"=>$query]);
         }
-       //$empleados = Empleado::all();
-       //$puestos=Puesto::all();
        
-        /*
-        $encuesta=Valoracion::whereUser_id($user->id)
-            ->join('presencias as p','presencia_id','p.id')
- 
-            $ingredientes = Ingrediente::select('ingredientes.*', 'um.nombre as unidad')
-            ->join('unidades_medidas as um', 'ingredientes.unidad_medida_id','um.id')
-
-
-
-
-            $empleado= DB::table('empleados as a')
-
-         ->select(DB::raw('CONCAT(a.nombre," ",a.apellido," ",a.dni," ",a.puesto_id) AS puesto'), 'a.id', 'a.nombre')
-            
-        $calculo=Calculo::create([
-                'id_detalle_receta'=> $i['id'],
-                'ingrediente'=> $i['nombre'],
-                'ingrediente_id' => $i['ingrediente_id'],
-                'fecha' => $fecha,
-                'cantidad_necesaria'=>$i['necesaria'],
-                'cantidad_existente'=>$i['cantidad'],
-            ]);s
-        */
         return view('empresa.empleados.index', compact('empleados'));
     
     }
@@ -142,7 +117,8 @@ class EmpleadoController extends Controller
      */
     public function editar(Empleado $empleado)
     {
-        return view('empresa.empleados.editar', compact('empleado'));
+        $puestos=Puesto::all();
+        return view('empresa.empleados.editar', compact('empleado','puestos'));
 
     }
 

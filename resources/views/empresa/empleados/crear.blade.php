@@ -171,13 +171,11 @@
                         <select name="puesto_id" id="puesto_id" class="custom-select">
                             <option value="">Seleccione un puesto</option><!--como no tiene value me pide un required en el controlador-->
                             @foreach ($puestos as $p)
-                                <option value="{{$p->id}}"> {{$p->nombre}}</option>
+                                <option value="{{$p->id}}"> {{$p->nombre_puesto}}</option>
                             @endforeach
                         </select>
                         {!! $errors->first('puesto_id', '<p class="help-block">:message</p>') !!}
                     </div>
-                
-
                 
                 <div class="form-group">
                     <label for="horario_de_trabajo">Horario de trabajo<span class="text-danger">*</span></label>

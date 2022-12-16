@@ -128,18 +128,28 @@
                       </span>
                     @enderror
                 </div>
+
                 
                 <div class="form-group">
                     <label for="puesto">Puesto<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control @error('puesto') is-invalid @enderror"
-                    name="puesto" value="{{old('puesto', $empleado->puesto->nombre)}}" >
+                    <input disabled type="text" class="form-control @error('puesto') is-invalid @enderror"
+                    name="puesto" value="{{old('puesto', $empleado->puesto->nombre_puesto)}}" >
 
                     @error('puesto')
                       <span class="invalid-feedback" role="alert">
                             <strong>{{$message}}</strong>
                       </span>
                     @enderror
-                </div>
+                        <label for="puesto_id" class="control-label"></label>
+                        <select name="puesto_id" id="puesto_id" class="custom-select">
+                            <option value="">Modificar puesto</option><!--como no tiene value me pide un required en el controlador-->
+                            @foreach ($puestos as $p)
+                                <option value="{{old('puesto_id', $p->id)}}"> {{$p->nombre_puesto}}</option>
+                            @endforeach
+                        </select>
+                        {!! $errors->first('puesto_id', '<p class="help-block">:message</p>') !!}
+                    </div>
+                
                 <div class="form-group">
                     <label for="descripcion">Descripcion<span class="text-danger">*</span></label>
                     <input type="text" class="form-control @error('descripcion') is-invalid @enderror"
@@ -210,8 +220,10 @@
                     @enderror
                 </div>
                 <div class="d-flex justify-content-center mt-4 ">
-                    <button type="submit" class="btn btn-primary mx-2">Editar empleado</button>
-                    <a href="{{route('empleados')}}" class="btn btn-secondary mx-2">Volver</a>
+                
+                  <button type="submit" class="btn btn-primary mx-2">Editar empleado</button>
+                
+                <a href="{{route('empleados')}}" class="btn btn-secondary mx-2">Volver</a>
                 </div>
             </div>
         </form>
