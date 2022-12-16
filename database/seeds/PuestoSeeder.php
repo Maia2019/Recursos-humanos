@@ -13,27 +13,27 @@ class PuestoSeeder extends Seeder
     public function run()
     {
         Puesto::create([
-            'nombre'=> 'Lider de proyectos',
+            'nombre_puesto'=> 'Lider de proyectos',
             'descripcion'=>'Esta a cargo del área de sistemas', 
             'departamento_id'=> 1,
         ]);
         Puesto::create([
-            'nombre'=> 'Gerente contable', 
+            'nombre_puesto'=> 'Gerente contable', 
             'descripcion'=>'Esta a cargo del área de contabilidad',
             'departamento_id'=> 2,
         ]);
         Puesto::create([
-            'nombre'=> 'Administrador',
+            'nombre_puesto'=> 'Administrador',
             'descripcion'=>'Cumple tareas administrativas',
             'departamento_id'=> 3,
         ]);
         Puesto::create([
-            'nombre'=> 'Gerente de ventas',
+            'nombre_puesto'=> 'Gerente de ventas',
             'descripcion'=>'Esta a cargo de las ventas',
             'departamento_id'=> 4,
         ]);
         Puesto::create([
-            'nombre'=> 'Ingeniero en Sistemas',
+            'nombre_puesto'=> 'Ingeniero en Sistemas',
             'descripcion'=>'Esta al frente de proyectos informáticos',
             'departamento_id'=> 1,
         ]);

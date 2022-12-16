@@ -34,21 +34,51 @@ class EmpleadoController extends Controller
             'Dni.unique' =>'El DNI ingresado ¡ya existe!',
             
         ]);*/
+       
         if ($request)
         {   
             $query=trim($request->get('searchText'));
-            $empleado= DB::table('empleados')
-            ->where('nombre','LIKE','%'.$query.'%')
-            ->orWhere('apellido','LIKE','%'.$query.'%')
-            ->orWhere('dni','LIKE','%'.$query.'%')
-            ->orderBy('nombre','asc')
-            /* tengo problemas con el orderBy y opte por el sortBy pero no resulta.*/
+            $empleado = DB::table('empleados')
+                ->select('empleados.id','empleados.nombre','apellido', 'empleados.descripcion', 'dni','puestos.nombre_puesto')
+                ->join('puestos', 'puestos.id', '=','empleados.puesto_id')//INNER JOIN
+                ->where('nombre','LIKE','%'.$query.'%')
+                ->orWhere('apellido','LIKE','%'.$query.'%')
+                ->orWhere('dni','LIKE','%'.$query.'%')
+                ->orderBy('nombre','asc')
+                ->paginate(7);
+            /* tengo problemas con el orderBy y opte por el sortBy pero no resulta.
             ->paginate(7);
+            */
             return view('empresa.empleados.index',['empleados'=>$empleado,"searchText"=>$query]);
         }
-        //$empleados = Empleado::all();
+       //$empleados = Empleado::all();
+       //$puestos=Puesto::all();
+       
+        /*
+        $encuesta=Valoracion::whereUser_id($user->id)
+            ->join('presencias as p','presencia_id','p.id')
+ 
+            $ingredientes = Ingrediente::select('ingredientes.*', 'um.nombre as unidad')
+            ->join('unidades_medidas as um', 'ingredientes.unidad_medida_id','um.id')
 
+
+
+
+            $empleado= DB::table('empleados as a')
+
+         ->select(DB::raw('CONCAT(a.nombre," ",a.apellido," ",a.dni," ",a.puesto_id) AS puesto'), 'a.id', 'a.nombre')
+            
+        $calculo=Calculo::create([
+                'id_detalle_receta'=> $i['id'],
+                'ingrediente'=> $i['nombre'],
+                'ingrediente_id' => $i['ingrediente_id'],
+                'fecha' => $fecha,
+                'cantidad_necesaria'=>$i['necesaria'],
+                'cantidad_existente'=>$i['cantidad'],
+            ]);s
+        */
         return view('empresa.empleados.index', compact('empleados'));
+    
     }
 
     /**

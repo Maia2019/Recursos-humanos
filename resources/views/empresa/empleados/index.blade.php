@@ -103,7 +103,7 @@
                         <td>{{$a->nombre}}</td>
                         <td>{{$a->apellido}}</td>
                         <td>{{$a->dni}}</td>
-                        <td>{{$a->puesto_id}}</td>
+                        <td>{{$a->nombre_puesto}}</td>
                         <td class="text-left">{{$a->descripcion}}</td>
 
 

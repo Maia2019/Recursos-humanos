@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class EmpleadoSolicitud extends Model
 {
     public $timestamps = false;
-    protected $table = 'empleados';
+    protected $table = 'empleado_solicitudes';
 
 
     protected $fillable = [

@@ -128,10 +128,11 @@
                       </span>
                     @enderror
                 </div>
+                
                 <div class="form-group">
                     <label for="puesto">Puesto<span class="text-danger">*</span></label>
                     <input type="text" class="form-control @error('puesto') is-invalid @enderror"
-                    name="puesto" value="{{old('puesto', $empleado->puesto)}}" >
+                    name="puesto" value="{{old('puesto', $empleado->puesto->nombre)}}" >
 
                     @error('puesto')
                       <span class="invalid-feedback" role="alert">
@@ -175,17 +176,6 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <label for="puesto">Puesto<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control @error('puesto') is-invalid @enderror"
-                    name="puesto" value="{{old('puesto', $empleado->puesto)}}" maxlength="50">
-
-                    @error('puesto')
-                      <span class="invalid-feedback" role="alert">
-                            <strong>{{$message}}</strong>
-                      </span>
-                    @enderror
-                </div>
                 <div class="form-group">
                     <label for="horario_de_trabajo">Horario de trabajo<span class="text-danger">*</span></label>
                     <input type="date" class="form-control @error('horario_de_trabajo') is-invalid @enderror"

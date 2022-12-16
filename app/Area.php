@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     public $timestamps = false;
+    protected $primaryKey = 'id';
+    
+    protected $table = 'areas';
 
     protected $fillable = [
         'nombre', 'descripcion', 'empresa_id',

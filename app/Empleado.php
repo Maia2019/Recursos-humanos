@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
     public $timestamps = false;
-    
+    protected $table = 'empleados';
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'nombre',
         'apellido',

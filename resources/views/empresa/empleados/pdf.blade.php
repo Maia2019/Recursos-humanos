@@ -92,7 +92,7 @@
                     <td style="border:1px solid grey"><p class="text-uppercase">{{$p->nombre }}</p></td>
                     <td style="border:1px solid grey"><p class="text-uppercase">{{$p->apellido }}</p></td>
                     <td style="border:1px solid grey"><p class="text-uppercase">{{$p->dni }}</p></td>
-                    <td style="border:1px solid grey"><p class="text-uppercase">{{$p->puesto->nombre }}</p></td>
+                    <td style="border:1px solid grey"><p class="text-uppercase">{{$p->puesto->nombre_puesto }}</p></td>
                     
                    
                     
