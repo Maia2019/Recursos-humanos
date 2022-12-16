@@ -15,6 +15,11 @@ class CreateEmpleadoSolicitudesTable extends Migration
     {
         Schema::create('empleado_solicitudes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('fecha_desde')->nullable();
+            $table->date('fecha_hasta')->nullable();
+            $table->boolean('estado');
+            $table->unsignedBigInteger('empleado_id')->nullable();
+            $table->unsignedBigInteger('solicitud_id')->nullable();
             $table->timestamps();
         });
     }

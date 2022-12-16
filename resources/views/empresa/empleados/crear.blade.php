@@ -153,8 +153,6 @@
                       </span>
                     @enderror
                 </div>
-                
-                 <div class="text-danger mb-3 small">(*) Campo obligatorio</div>
 
                 <div class="form-group">
                     <label for="informacion_general">informacion general<span class="text-danger">*</span></label>

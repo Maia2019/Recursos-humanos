@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Solucitud extends Model
+class Solicitud extends Model
 {
     public $timestamps = false;
+    
+    protected $table = 'solicitudes';
 
     protected $fillable = [
-        'nombre', 'descripcion'
+        'nombre', 'descripcion',
     ];
 
     public function empleados_solicitudes()
